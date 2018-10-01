@@ -1,7 +1,5 @@
 # Reading CSV and Subsetting
 power_cons <- read.csv("household_power_consumption.txt",sep= ";",na.strings = "?")
-a <- power_cons
-power_cons <- a
 power_cons$Date <- as.Date(power_cons$Date, format = "%d/%m/%Y")
 power_cons$Time <- strptime(paste(power_cons$Date, power_cons$Time), "%Y-%m-%d %H:%M:%S") 
 subset.power <- power_cons[power_cons$Date >= "2007-02-01" & power_cons$Date <= "2007-02-02",]
